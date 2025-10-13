@@ -50,6 +50,7 @@ class ClipboardTTS:
             ps_command = f'''
             Add-Type -AssemblyName System.Speech
             $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
+            $speak.Rate = 1  # 新增此行！语速设为-2，比默认值慢一些。
             $speak.Speak("{cleaned_text}")
             '''
             
@@ -113,3 +114,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
