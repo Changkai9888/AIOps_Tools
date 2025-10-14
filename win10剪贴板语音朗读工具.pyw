@@ -42,6 +42,7 @@ class ClipboardTTS:
     def speak(self, text):
         """使用系统原生语音引擎朗读文本"""
         cleaned_text = self.clean_text(text)
+        cleaned_text=cleaned_text.replace('‘', '“').replace('’', '”')
         if not cleaned_text:
             return False
         
@@ -114,4 +115,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
